@@ -376,7 +376,6 @@ class ModelComplexityStudy:
             x_odd = x_int[x_int % 2 == 1]
             ax_mean.set_xticks(x_odd)
 
-        # Sixth panel unused
         axs_flat[5].axis("off")
 
         for ax in axs_flat[:5]:
