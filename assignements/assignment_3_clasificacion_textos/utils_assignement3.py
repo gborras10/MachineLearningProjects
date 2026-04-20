@@ -6,7 +6,7 @@ import time
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
 from sklearn.pipeline import make_pipeline
 
-def plot_confusion_matrix(X_test, y_test, pipe):
+def plot_confusion_matrix(X_test, y_test, pipe, classifier_name):
     ticks = np.unique(y_test)
     labels = [('class '+ str(tick)) for tick in ticks]
     y_pred = pipe.predict(X_test)
@@ -14,7 +14,7 @@ def plot_confusion_matrix(X_test, y_test, pipe):
     fig = plt.figure(figsize=(10, 5))
     ax = fig.add_subplot(111)
     cax = ax.matshow(cm)
-    plt.title('Confusion matrix')
+    plt.title(f'Confusion matrix for {classifier_name}')
     fig.colorbar(cax)
     ax.set_xticks(ticks)
     ax.set_xticklabels(labels)
